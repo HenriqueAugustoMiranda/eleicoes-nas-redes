@@ -1,0 +1,171 @@
+# ==========================================
+# NODE.JS
+# ==========================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Não ignorar package-lock.json
+# Ele garante a reprodução das dependências.
+
+
+# ==========================================
+# WHATSAPP - SESSÃO E AUTENTICAÇÃO
+# ==========================================
+
+.wwebjs_auth/
+.wwebjs_cache/
+.wwebjs_temp/
+.session/
+sessions/
+auth/
+
+
+# ==========================================
+# BANCO DE DADOS
+# ==========================================
+
+db/
+dados/
+
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.db
+*.db-*
+*.wal
+*.shm
+
+
+# ==========================================
+# MÍDIAS COLETADAS
+# ==========================================
+
+midias/
+media/
+downloads/
+
+*.ogg
+*.opus
+*.mp3
+*.wav
+*.mp4
+*.webm
+*.mkv
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.pdf
+*.doc
+*.docx
+
+
+# ==========================================
+# EXPORTAÇÕES E TRANSCRIÇÕES
+# ==========================================
+
+exports/
+
+*.csv
+*.jsonl
+*.parquet
+
+# Dados locais de transcrição
+transcricoes_whisper.csv
+
+
+# ==========================================
+# CONFIGURAÇÕES LOCAIS E CREDENCIAIS
+# ==========================================
+
+.env
+.env.*
+!.env.example
+
+config/canais.json
+config/*.local.json
+
+*.pem
+*.key
+
+
+# ==========================================
+# LOGS E ARQUIVOS TEMPORÁRIOS
+# ==========================================
+
+logs/
+tmp/
+temp/
+*.log
+*.tmp
+*.part
+
+
+# ==========================================
+# BACKUPS E CÓPIAS LOCAIS
+# ==========================================
+
+*.bak
+*.bak-*
+*.backup
+*.old
+
+.backup-migracao-*/
+*.sqlite.backup
+*.sqlite.bak
+
+
+# ==========================================
+# PYTHON
+# ==========================================
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+
+# ==========================================
+# EDITORES E SISTEMA OPERACIONAL
+# ==========================================
+
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+.vscode/
+.idea/
+
+# ==========================================
+# RESULTADOS DE DIAGNÓSTICOS
+# ==========================================
+
+diagnostico_canais.json
+publicacoes.json
+
+# ==========================================
+# SCRIPTS TEMPORÁRIOS DE TESTE
+# ==========================================
+
+baixar_amostra.cjs
+comparar_ptv.cjs
+diagnostico_canais.cjs
+diagnostico_ptv.cjs
+diagnosticar_falhas.cjs
+inspecionar_newsletter.cjs
+investigar_pendencias.cjs
+teste_*.cjs
+teste_canal.cjs
+teste_publicacoes.cjs
+verificar_id_media.cjs
+
+# Coletor legado (não utilizar com o banco atual)
+scraper.cjs
