@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const DATA_DIR = process.env.WA_DATA_DIR ||
-    path.join(__dirname, 'dados');
+    path.resolve(__dirname, '..');
 
 const DB_PATH = path.join(DATA_DIR, 'db', 'whatsapp.sqlite');
 const CSV_PATH = path.join(DATA_DIR, 'exports', 'mensagens.csv');

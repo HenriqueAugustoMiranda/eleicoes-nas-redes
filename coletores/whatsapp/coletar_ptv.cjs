@@ -4,11 +4,13 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const BASE = '/media/hen/ssd/projetos/teste-canal-whatsapp';
-const DB = path.join(BASE, 'db/whatsapp.sqlite');
+const ROOT_DIR = path.resolve(__dirname, '../..');
+const BASE = process.env.WA_DATA_DIR || ROOT_DIR;
+const DB = path.join(BASE, 'db', 'whatsapp.sqlite');
+const CONFIG = path.join(ROOT_DIR, 'config', 'canais.json');
 
 const canais = JSON.parse(
-    fs.readFileSync('config/canais.json', 'utf8')
+    fs.readFileSync(CONFIG, 'utf8')
 );
 
 function consultar(sql) {
@@ -214,7 +216,10 @@ async function main() {
     if (!registros.length) return;
 
     const client = new Client({
-        authStrategy: new LocalAuth({ clientId: 'canal-teste' }),
+        authStrategy: new LocalAuth({
+        clientId: 'canal-teste',
+        dataPath: path.join(ROOT_DIR, '.wwebjs_auth')
+    }),
         puppeteer: { headless: true }
     });
 

@@ -169,3 +169,8 @@ verificar_id_media.cjs
 
 # Coletor legado (não utilizar com o banco atual)
 scraper.cjs
+
+# Sessão e executável do whatsmeow
+/tests/whatsmeow-reacoes/auth.db
+/tests/whatsmeow-reacoes/coletor-reacoes
+/tests/whatsmeow-reacoes/auth-reacoes-v2.db

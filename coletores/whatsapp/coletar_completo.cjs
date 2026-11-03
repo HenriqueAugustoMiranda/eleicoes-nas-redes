@@ -5,11 +5,11 @@ const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
 
-const DATA_DIR =
-    process.env.WA_DATA_DIR ||
-    '/media/hen/ssd/projetos/teste-canal-whatsapp';
+const ROOT_DIR = path.resolve(__dirname, '../..');
 
-const CONFIG = path.join(__dirname, 'config/canais.json');
+const DATA_DIR = process.env.WA_DATA_DIR || ROOT_DIR;
+
+const CONFIG = path.join(ROOT_DIR, 'config', 'canais.json');
 const DB_PATH = path.join(DATA_DIR, 'db/whatsapp.sqlite');
 const MEDIA_DIR = path.join(DATA_DIR, 'midias');
 
@@ -830,8 +830,9 @@ async function processarDownloads() {
 async function main() {
     const client = new Client({
         authStrategy: new LocalAuth({
-            clientId: 'canal-teste'
-        }),
+        clientId: 'canal-teste',
+        dataPath: path.join(ROOT_DIR, '.wwebjs_auth')
+    }),
         puppeteer: {
             headless: true
         }

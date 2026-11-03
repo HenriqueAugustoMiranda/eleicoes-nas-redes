@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "coletar:whatsapp": "node coletores/whatsapp/coletar_completo.cjs",
+    "coletar:ptv": "node coletores/whatsapp/coletar_ptv.cjs",
+    "buscar:canal": "node coletores/whatsapp/buscar_canal.cjs",
+    "exportar": "node processamento/exportar_csv.cjs",
+    "importar:transcricoes": "python3 processamento/importar_transcricoes.py"
   },
   "keywords": [],
   "author": "",

@@ -1,5 +1,8 @@
 
 const { Client, LocalAuth } = require('whatsapp-web.js');
+const path = require('node:path');
+
+const ROOT_DIR = path.resolve(__dirname, '../..');
 
 const termo = process.argv.slice(2).join(' ').trim();
 
@@ -10,7 +13,8 @@ if (!termo) {
 
 const client = new Client({
     authStrategy: new LocalAuth({
-        clientId: 'canal-teste'
+        clientId: 'canal-teste',
+        dataPath: path.join(ROOT_DIR, '.wwebjs_auth')
     }),
     puppeteer: {
         headless: true
